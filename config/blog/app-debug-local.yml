@@ -1,0 +1,57 @@
+
+App:
+  NameSpace:    prjc
+  Name:         blog
+  Service:      blog-restapi
+  Environment:  local
+
+API:
+  Rest:
+    Addr:         ":9000"
+    ReadTimeout:  "5s"
+    WriteTimeout: "5s"
+    IdleTimeout:  "10s"
+  Metrics:
+    Addr:         ":9090"
+    ReadTimeout:  "5s"
+    WriteTimeout: "5s"
+    IdleTimeout:  "10s"
+  Probes:
+    Addr:         ":9091"
+    ReadTimeout:  "5s"
+    WriteTimeout: "5s"
+    IdleTimeout:  "10s"
+
+Infra:
+  TsDB:
+    Conn:
+      Host:             localhost
+      Port:             5400
+      User:             postgres
+      DbName:           prjc
+      SchemaName:       blog
+      MaxOpenConns:     30
+      MaxIdleConns:     30
+      MinConns:         5
+      MaxConnLifetime:  "1h"
+      Timeout:          "60s"
+    ReplicaSet:
+      MasterHost:     "localhost"
+      MasterPort:     5400
+      SlaveHost:      "localhost"
+      SlavePort:      5400
+      Password:       "gjcnuhtc"
+
+  Redis:
+    Conn:
+      Addrs:
+        - "localhost:6379"
+      Login:    ""
+      Password: ""
+      DBNum:    0
+    ReplicaSet:
+      MasterAddrs:    "localhost:6379"
+      SlaveAddrs:     "localhost:6379"
+      Password:       ""
+
+

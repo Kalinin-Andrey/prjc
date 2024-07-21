@@ -1,0 +1,69 @@
+global:
+  scrape_interval: 3s
+
+# Rule files specifies a list of globs. Rules and alerts are read from
+# all matching files.
+rule_files:
+
+# A list of scrape configurations.
+scrape_configs:
+
+  - job_name: tsdb
+    static_configs:
+      - targets: ['tsdbExp']
+        labels:
+          group: 'local'
+
+  - job_name: pg
+    static_configs:
+      - targets: ['pgExp']
+        labels:
+          group: 'local'
+
+  - job_name: calculator
+    static_configs:
+      - targets: ['calculator']
+        labels:
+          group: 'local'
+
+  - job_name: defect-collector
+    static_configs:
+      - targets: ['defect-collector']
+        labels:
+          group: 'local'
+
+  - job_name: defect-processinger
+    static_configs:
+      - targets: ['defect-processinger']
+        labels:
+          group: 'local'
+
+  - job_name: feedback-collector
+    static_configs:
+      - targets: ['feedback-collector']
+        labels:
+          group: 'local'
+
+#  - job_name: filler-seller-id-of-nm-id
+#    static_configs:
+#      - targets: ['filler-seller-id-of-nm-id']
+#        labels:
+#          group: 'local'
+
+  - job_name: mp-order-change-collector
+    static_configs:
+      - targets: ['mp-order-change-collector']
+        labels:
+          group: 'local'
+
+  - job_name: mp-order-creation-collector
+    static_configs:
+      - targets: ['mp-order-creation-collector']
+        labels:
+          group: 'local'
+
+  - job_name: rating
+    static_configs:
+      - targets: ['rating']
+        labels:
+          group: 'local'
