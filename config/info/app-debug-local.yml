@@ -1,0 +1,166 @@
+
+App:
+  NameSpace:    prjc
+  Name:         blog
+  Service:      blog-restapi
+  Environment:  local
+
+API:
+  Rest:
+    Addr:         ":9000"
+    ReadTimeout:  "5s"
+    WriteTimeout: "5s"
+    IdleTimeout:  "10s"
+  Metrics:
+    Addr:         ":9090"
+    ReadTimeout:  "5s"
+    WriteTimeout: "5s"
+    IdleTimeout:  "10s"
+  Probes:
+    Addr:         ":9091"
+    ReadTimeout:  "5s"
+    WriteTimeout: "5s"
+    IdleTimeout:  "10s"
+
+Infra:
+  TsDB:
+    Conn:
+      Host:             localhost
+      Port:             5400
+      User:             postgres
+      DbName:           prjc
+      SchemaName:       blog
+      MaxOpenConns:     30
+      MaxIdleConns:     30
+      MinConns:         5
+      MaxConnLifetime:  "1h"
+      Timeout:          "60s"
+    ReplicaSet:
+      MasterHost:     "localhost"
+      MasterPort:     5400
+      SlaveHost:      "localhost"
+      SlavePort:      5400
+      Password:       "gjcnuhtc"
+
+  Redis:
+    Conn:
+      Addrs:
+        - "localhost:6379"
+      Login:    ""
+      Password: ""
+      DBNum:    0
+    ReplicaSet:
+      MasterAddrs:    "localhost:6379"
+      SlaveAddrs:     "localhost:6379"
+      Password:       ""
+
+Cli:
+  CMCImport:
+    Duration:         "24h"
+    ListOfCurrencySlugs:
+      - dogs
+      - dydx-chain
+      - mask-network
+      - axelar
+      - milady-meme-coin
+      - dogelon
+      - iotex
+      - synthetix
+      - dexe
+      - magic-token
+      - onbeam
+      - blur-token
+      - meme
+      - echelon-prime
+      - wootrade
+      - amp
+      - aelf
+      - apecoin-ape
+      - orbs
+      - swissborg
+      - metisdao
+      - camelot-token
+      - gmx
+      - telcoin
+      - frax-share
+      - unkjd
+      - tribe
+      - audius
+      - civic
+      - yield-guild-games
+      - band-protocol
+      - tokenlon-network-token
+      - ontology
+      - kwenta
+      - spell-token
+      - ontology-gas
+      - stormx
+      - velodrome-finance
+      - whale
+      - joe
+      - superrare
+      - api3
+      - electroneum
+      - celsius
+      - status
+      - radiant-capital
+      - phala-network
+      - looksrare
+      - nest-protocol
+      - constellation
+      - contentos
+      - vite
+      - mcdex
+      - quarkchain
+      - alchemix
+      - cortex
+      - pangolin
+      - ribbon-finance
+      - adx-net
+      - metal
+      - sentinel
+      - unilend
+      - keep3rv1
+      - rally
+      - loom-network
+      - stargate-finance
+      - function-x
+      - edgeware
+      - orion-xyz
+      - oax
+      - liquity
+      - radworks
+      - hegic
+      - combo-network
+      - cream-finance
+      - dock
+      - bytom
+      - moviebloc
+      - dfyn-network
+      - nuls
+      - airswap
+      - aergo
+      - paraswap
+      - morpheus-network
+      - ceek-vr
+      - bitkan
+      - augur
+      - torn
+      - litentry
+      - dhedge-dao
+      - unifi-protocol-dao
+      - fusion
+      - the-force-protocol
+      - bella-protocol
+      - barnbridge
+      - solve
+      - pickle-finance
+      - star-link
+      - swftcoin
+      - ren
+      - idex
+      - verasity
+      - lambda
+      - dforce
+      - harvest-finance
+

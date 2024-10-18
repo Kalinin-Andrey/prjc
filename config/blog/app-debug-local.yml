@@ -54,4 +54,7 @@ Infra:
       SlaveAddrs:     "localhost:6379"
       Password:       ""
 
+Cli:
+  CMCImport:
+    Duration:         "24h"
 
