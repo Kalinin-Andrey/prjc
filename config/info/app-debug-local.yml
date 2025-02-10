@@ -22,6 +22,14 @@ API:
     WriteTimeout: "5s"
     IdleTimeout:  "10s"
 
+Integration:
+  CmcAPI:
+    Httpconfig:
+      Name:                 "cmc-api"
+      MaxIdleConnDuration:  "60s"
+      Timeout:              "120s"
+      Host:                 "https://api.coinmarketcap.com"
+
 Infra:
   TsDB:
     Conn:
@@ -55,11 +63,12 @@ Infra:
       Password:       ""
 
 Cli:
-  CMCImport:
+  CurrencyCollector:
     Duration:         "24h"
     ListOfCurrencySlugs:
       - dogs
       - dydx-chain
+      - dydx-ethdydx
       - mask-network
       - axelar
       - milady-meme-coin
@@ -163,4 +172,15 @@ Cli:
       - lambda
       - dforce
       - harvest-finance
+      - apex-token
+      - hashflow
+      - yield-app
+      - powerpool
+      - akropolis
+      - morpho
+      - notcoin
+      - 0x
+      - basic-attention-token
+      - ftx-token
+      - wormhole
 

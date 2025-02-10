@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
 
@@ -94,24 +93,24 @@ services:
 #      - backend
 #    tty: true
 #
-#  grafana:
-#    image: grafana/grafana:9.5.2
-#    #    command: "--config /etc/grafana/grafana.ini "
-#    restart: always
-#    environment:
-#      SECURITY_ADMIN_USER: "admin"
-#      SECURITY_ADMIN_PASSWORD: "admin"
-#    depends_on:
-#      prometheus:
-#        condition: service_started
-#    volumes:
-#      - ./config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-#      - ./data/grafana:/var/lib/grafana
-#    ports:
-#      - 3000:3000
-#    networks:
-#      - backend
-#    tty: true
+  grafana:
+    image: grafana/grafana:11.5.0
+    #    command: "--config /etc/grafana/grafana.ini "
+    restart: always
+    environment:
+      SECURITY_ADMIN_USER: "admin"
+      SECURITY_ADMIN_PASSWORD: "admin"
+    depends_on:
+      tsdb:
+        condition: service_started
+    volumes:
+      - ./config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./data/grafana:/var/lib/grafana
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+    tty: true
 
 volumes:
 #  pg-data:
