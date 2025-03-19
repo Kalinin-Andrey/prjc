@@ -30,6 +30,14 @@ Integration:
       Timeout:              "120s"
       Host:                 "https://api.coinmarketcap.com"
 
+  CmcProAPI:
+    Httpconfig:
+      Name:                 "cmc-pro-api"
+      MaxIdleConnDuration:  "60s"
+      Timeout:              "120s"
+      Host:                 "https://pro-api.coinmarketcap.com"
+    Token:  "4beb54ef-861a-4a68-8221-007501e3bbeb"
+
 Infra:
   TsDB:
     Conn:
@@ -73,7 +81,6 @@ Cli:
       - axelar
       - milady-meme-coin
       - dogelon
-      - iotex
       - synthetix
       - dexe
       - magic-token
@@ -142,7 +149,6 @@ Cli:
       - hegic
       - combo-network
       - cream-finance
-      - dock
       - bytom
       - moviebloc
       - dfyn-network
@@ -155,7 +161,6 @@ Cli:
       - bitkan
       - augur
       - torn
-      - litentry
       - dhedge-dao
       - unifi-protocol-dao
       - fusion
@@ -174,7 +179,6 @@ Cli:
       - harvest-finance
       - apex-token
       - hashflow
-      - yield-app
       - powerpool
       - akropolis
       - morpho
@@ -183,4 +187,48 @@ Cli:
       - basic-attention-token
       - ftx-token
       - wormhole
+      - starknet-token
+      - 1inch
+      - layerzero
+      - space-id
+      - ether-fi-ethfi
+      - green-metaverse-token
+      - biconomy
+      - rocket-pool
+      - first-neiro-on-ethereum
+      - uma
+      - ssv-network
+      - cow-protocol
+      - altlayer
+      - balancer
+      - illuvium
+      - big-time
+      - marlin
+      - keep-network
+      - dkargo
+      - aurora-near
+      - cyberconnect
+      - catizen
+      - maverick-protocol
+      - sundog
+      - renzo
+      - vaderai-by-virtuals
+      - tokemak
+      - paid-network
+      - luna-by-virtuals
+      - dora-factory-new
+      - guild-of-guardians
+      - heroes-of-mavia
+      - taocat-by-virtuals-masa
+      - aixcb-by-virtuals
+      - unibot-eth
+      - crustnetwork
+      - saffron-finance
+      - meta
+      - jetton
+      - free-coin
+      - dkargo
+      - keep-network
+      - marlin
+      - big-time
 

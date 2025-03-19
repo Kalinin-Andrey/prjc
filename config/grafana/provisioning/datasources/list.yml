@@ -10,17 +10,17 @@ datasources:
 
   - name: TimescaleDB
     type: postgres
-    url: localhost:5400
-    isDefault: true
+    url: tsdb:5432
+    database: prjc
     user: postgres
     secureJsonData:
       password: 'gjcnuhtc'
+    isDefault: true
     jsonData:
-      database: prjc
       sslmode: 'disable' # disable/require/verify-ca/verify-full
-      maxOpenConns: 100
+      maxOpenConns: 0
       maxIdleConns: 100
-      maxIdleConnsAuto: true
+      #maxIdleConnsAuto: true
       connMaxLifetime: 14400
-      postgresVersion: 15 # 903=9.3, 904=9.4, 905=9.5, 906=9.6, 1000=10
+      postgresVersion: 1500 # 903=9.3, 904=9.4, 905=9.5, 906=9.6, 1000=10
       timescaledb: true

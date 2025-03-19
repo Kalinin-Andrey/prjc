@@ -3,4 +3,5 @@ App:
   Service:      info
 
 Integration:
-  CMCImport:    true
+  CmcApi:    true
+  CmcProApi:    true

@@ -98,8 +98,8 @@ services:
     #    command: "--config /etc/grafana/grafana.ini "
     restart: always
     environment:
-      SECURITY_ADMIN_USER: "admin"
-      SECURITY_ADMIN_PASSWORD: "admin"
+      SECURITY_ADMIN_USER: "admin1"
+      SECURITY_ADMIN_PASSWORD: "admin1"
     depends_on:
       tsdb:
         condition: service_started
