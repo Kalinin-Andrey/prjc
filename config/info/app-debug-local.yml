@@ -29,6 +29,7 @@ Integration:
       MaxIdleConnDuration:  "60s"
       Timeout:              "120s"
       Host:                 "https://api.coinmarketcap.com"
+    Cookie:  ""
 
   CmcProAPI:
     Httpconfig:
@@ -36,7 +37,7 @@ Integration:
       MaxIdleConnDuration:  "60s"
       Timeout:              "120s"
       Host:                 "https://pro-api.coinmarketcap.com"
-    Token:  "4beb54ef-861a-4a68-8221-007501e3bbeb"
+    Token:  ""
 
 Infra:
   TsDB:
@@ -73,6 +74,8 @@ Infra:
 Cli:
   CurrencyCollector:
     Duration:         "24h"
+    PortfolioSourceIDs:
+      - 6651f947db928013879d191c
     ListOfCurrencySlugs:
       - dogs
       - dydx-chain
@@ -231,4 +234,6 @@ Cli:
       - keep-network
       - marlin
       - big-time
+      - pancakeswap
+      - kaito
 
