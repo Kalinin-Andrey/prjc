@@ -39,6 +39,13 @@ Integration:
       Host:                 "https://pro-api.coinmarketcap.com"
     Token:  ""
 
+  Oracul:
+    Httpconfig:
+      Name:                 "oracul"
+      MaxIdleConnDuration:  "60s"
+      Timeout:              "120s"
+      Host:                 "https://api-v2.oracul.io"
+
 Infra:
   TsDB:
     Conn:
@@ -125,7 +132,6 @@ Cli:
       - radiant-capital
       - phala-network
       - looksrare
-      - nest-protocol
       - constellation
       - contentos
       - vite
@@ -134,7 +140,6 @@ Cli:
       - alchemix
       - cortex
       - pangolin
-      - ribbon-finance
       - adx-net
       - metal
       - sentinel
@@ -143,9 +148,7 @@ Cli:
       - rally
       - loom-network
       - stargate-finance
-      - function-x
       - edgeware
-      - orion-xyz
       - oax
       - liquity
       - radworks
@@ -170,7 +173,6 @@ Cli:
       - the-force-protocol
       - bella-protocol
       - barnbridge
-      - solve
       - pickle-finance
       - star-link
       - swftcoin
@@ -207,7 +209,6 @@ Cli:
       - illuvium
       - big-time
       - marlin
-      - keep-network
       - dkargo
       - aurora-near
       - cyberconnect
@@ -226,12 +227,10 @@ Cli:
       - aixcb-by-virtuals
       - unibot-eth
       - crustnetwork
-      - saffron-finance
       - meta
       - jetton
       - free-coin
       - dkargo
-      - keep-network
       - marlin
       - big-time
       - pancakeswap
