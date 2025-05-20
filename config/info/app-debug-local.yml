@@ -39,9 +39,9 @@ Integration:
       Host:                 "https://pro-api.coinmarketcap.com"
     Token:  ""
 
-  Oracul:
+  OraculAnalyticsAPI:
     Httpconfig:
-      Name:                 "oracul"
+      Name:                 "oracul-analytics-api"
       MaxIdleConnDuration:  "60s"
       Timeout:              "120s"
       Host:                 "https://api-v2.oracul.io"
@@ -243,4 +243,7 @@ Cli:
       - celer-network
       - constitutiondao
       - vvs-finance
+      - the-graph
+      - immutable-x
+      - optimism-ethereum
 

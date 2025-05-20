@@ -3,5 +3,6 @@ App:
   Service:      info
 
 Integration:
-  CmcApi:    true
-  CmcProApi:    true
+  CmcAPI:               true
+  CmcProAPI:            true
+  OraculAnalyticsAPI:   true
