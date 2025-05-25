@@ -141,7 +141,7 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="cmc" enabled="false"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="cmc" enabled="true"/>
         <hashTree>
           <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -161,7 +161,11 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">cookie</stringProp>
-                <stringProp name="Header.value">Authorization=BearereyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyb2xlcyI6ImFjY291bnRXZWIsYWNjb3VudE1vYmlsZSIsInVpZCI6MTExMjE5ODY1LCJpc3MiOiJjbWMtYXV0aCIsImlhdCI6MTc0MTk0OTI4NCwic3ViIjoiNjY1MWY5NDdjZGFlNjk1NzAwNjk3MjYxIiwiZXhwIjoxNzQ5NzI1Mjg0fQ.b4mUnPiChVA01ZqShnSZH4BKYUxM5FOWhEjWazAWqwY;</stringProp>
+                <stringProp name="Header.value">Authorization=BearereyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyb2xlcyI6ImFjY291bnRXZWIsYWNjb3VudE1vYmlsZSxhY2NvdW50IiwidWlkIjoxMTEyMTk4NjUsImlzcyI6ImNtYy1hdXRoIiwiaWF0IjoxNzQ1ODcxNTQzLCJzdWIiOiI2NjUxZjk0N2NkYWU2OTU3MDA2OTcyNjEiLCJleHAiOjE3NTM2NDc1NDN9.5XE8ZXRbvH4DbOeqxcpDSxBTJWnWF1do3uvJ9XTdPY4;</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">platform</stringProp>
+                <stringProp name="Header.value">web</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -241,7 +245,7 @@
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /asset/v3/portfolio/query-summary" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /asset/v3/portfolio/query-summary" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -395,7 +399,7 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="app.oracul.io" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="app.oracul.io" enabled="false"/>
         <hashTree>
           <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
