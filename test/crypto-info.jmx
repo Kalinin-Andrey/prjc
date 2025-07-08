@@ -141,7 +141,7 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="cmc" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="cmc" enabled="false"/>
         <hashTree>
           <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -161,7 +161,7 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">cookie</stringProp>
-                <stringProp name="Header.value">Authorization=BearereyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyb2xlcyI6ImFjY291bnRXZWIsYWNjb3VudE1vYmlsZSxhY2NvdW50IiwidWlkIjoxMTEyMTk4NjUsImlzcyI6ImNtYy1hdXRoIiwiaWF0IjoxNzQ1ODcxNTQzLCJzdWIiOiI2NjUxZjk0N2NkYWU2OTU3MDA2OTcyNjEiLCJleHAiOjE3NTM2NDc1NDN9.5XE8ZXRbvH4DbOeqxcpDSxBTJWnWF1do3uvJ9XTdPY4;</stringProp>
+                <stringProp name="Header.value">Authorization=BearereyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJyb2xlcyI6ImFjY291bnRXZWIsYWNjb3VudE1vYmlsZSxhY2NvdW50IiwidWlkIjoxMTEyMTk4NjUsImlzcyI6ImNtYy1hdXRoIiwiaWF0IjoxNzQ4NDY1MzA4LCJzdWIiOiI2NjUxZjk0N2NkYWU2OTU3MDA2OTcyNjEiLCJleHAiOjE3NTYyNDEzMDh9.VK_76g9uU9Q0T1789xR5UlJU0xe-QtrKNZA3wEpGjdg;</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -399,7 +399,7 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="app.oracul.io" enabled="false"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="app.oracul.io" enabled="true"/>
         <hashTree>
           <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
