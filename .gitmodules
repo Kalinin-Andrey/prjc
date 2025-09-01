@@ -1,0 +1,9 @@
+[submodule "course"]
+	path = course
+	url = git@github.com:Kalinin-Andrey/course.git
+[submodule "blog"]
+	path = blog
+	url = git@github.com:Kalinin-Andrey/blog.git
+[submodule "info"]
+	path = info
+	url = git@github.com:Kalinin-Andrey/info.git

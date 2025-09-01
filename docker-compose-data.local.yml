@@ -1,0 +1,121 @@
+
+services:
+
+  tsdb:
+    image: timescale/timescaledb:latest-pg15
+    volumes:
+      - tsdb-data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      PGDATA:             /var/lib/postgresql/data
+      POSTGRES_DB:        prjc
+      POSTGRES_USER:      postgres
+      POSTGRES_PASSWORD:  gjcnuhtc
+    ports:
+      - 5400:5432
+    networks:
+      - backend
+    tty: true
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+#  pg:
+#    image: postgres:16-alpine
+#    volumes:
+#      - pg-data:/var/lib/postgresql/data
+#    restart: always
+#    environment:
+#      PGDATA: /var/lib/postgresql/data
+#      POSTGRES_DB:        user_balance
+#      POSTGRES_USER:      postgres
+#      POSTGRES_PASSWORD:  gjcnuhtc
+#    ports:
+#      - 5401:5432
+#    networks:
+#      - backend
+#    tty: true
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready -U postgres"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - 6379:6379
+    networks:
+      - backend
+    tty: true
+
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    restart: always
+    volumes:
+      - ./data/redisinsight:/db
+    ports:
+      - 8001:8001
+    networks:
+      - backend
+    tty: true
+
+#  prometheus:
+#    image: prom/prometheus:v2.40.6
+#    restart: always
+#    depends_on:
+#      restapi:
+#        condition: service_started
+#      pgExp:
+#        condition: service_started
+#    volumes:
+#      - ./config/prometheus:/etc/prometheus
+#    ports:
+#      - 9090:9090
+#    networks:
+#      - backend
+#    tty: true
+#
+#  pgExp:
+#    image:  quay.io/prometheuscommunity/postgres-exporter:v0.11.1
+#    restart: always
+#    environment:
+#      DATA_SOURCE_NAME: "postgresql://postgres:postgres@pg:5432/postgres?sslmode=disable"
+#    depends_on:
+#      pg:
+#        condition: service_healthy
+#    networks:
+#      - backend
+#    tty: true
+#
+  grafana:
+    image: grafana/grafana:11.5.0
+    #    command: "--config /etc/grafana/grafana.ini "
+    restart: always
+    environment:
+      SECURITY_ADMIN_USER: "admin"
+      SECURITY_ADMIN_PASSWORD: "admin1"
+    depends_on:
+      tsdb:
+        condition: service_started
+    volumes:
+      - ./config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./data/grafana:/var/lib/grafana
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+    tty: true
+
+volumes:
+#  pg-data:
+#    driver: local
+  tsdb-data:
+    driver: local
+networks:
+  backend:
